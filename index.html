@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Layout </title>
+  <style>
+    * {
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: Arial, sans-serif;
+      padding: 20px;
+    }
+
+    .container {
+      display: grid;
+      gap: 10px;
+    }
+
+    .box {
+      background-color: #ccc;
+      text-align: center;
+      padding: 30px 0;
+      font-size: 1.5rem;
+    }
+
+    /* Layout para telas maiores (computadores) */
+    @media (min-width: 781px) {
+      .container {
+        grid-template-columns: repeat(8, 1fr);
+      }
+
+      .item4, .item5, .item6, .item7, .item8, .item9, .item10, .item11 {
+        grid-column: span 1;
+      }
+
+      .item1, .item2, .item3 {
+        grid-column: span 2;
+      }
+    }
+
+    /* Layout para tablets (680px até 780px) */
+    @media (min-width: 680px) and (max-width: 780px) {
+      .container {
+        grid-template-columns: repeat(4, 1fr);
+      }
+
+      .item4, .item5, .item6, .item7 {
+        grid-column: span 1;
+      }
+
+      .item8, .item9, .item10, .item11 {
+        grid-column: span 1;
+      }
+
+      .item1, .item2, .item3 {
+        grid-column: span 2;
+      }
+
+      .box {
+        font-size: 1.2rem;
+      }
+    }
+
+    /* Layout para celulares (480px até 600px) */
+    @media (max-width: 600px) {
+      .container {
+        grid-template-columns: 1fr;
+      }
+
+      .box {
+        font-size: 1rem;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <div class="box item4">4</div>
+    <div class="box item5">5</div>
+    <div class="box item6">6</div>
+    <div class="box item7">7</div>
+    <div class="box item8">8</div>
+    <div class="box item9">9</div>
+    <div class="box item10">10</div>
+    <div class="box item11">11</div>
+    <div class="box item1">1</div>
+    <div class="box item2">2</div>
+    <div class="box item3">3</div>
+  </div>
+</body>
+</html>
